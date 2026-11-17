@@ -1,0 +1,27 @@
+{
+  "name": "copy-me-desktop",
+  "version": "0.1.0",
+  "description": "Copy Me clipboard sync",
+  "author": "Copy Me",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "dependencies": { "ws": "^8.18.0" },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.copyme.desktop",
+    "productName": "Copy Me",
+    "files": ["main.js", "index.html", "package.json"],
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg", "category": "public.app-category.utilities" },
+    "linux": { "target": "AppImage", "category": "Utility" }
+  }
+}
